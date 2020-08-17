@@ -27,11 +27,11 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+ *    Counter1 is uses a higher function and callback.  Counter2 is a simple function.
  * 2. Which of the two uses a closure? How can you tell?
- * 
+ *    Counter1, because it calls on the count variable from outside of the scope.
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ *    If you need to access a variable outside and plug it into multiple functions.
 */
 
 // counter1 code
@@ -56,11 +56,16 @@ function counter2() {
 
 Write a function called `inning` that returns a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
+function inning(){
+    let points = Math.floor(Math.random() * 3);
 
-    /*Code Here*/
-
+    return points;
 }
+console.log(inning());
+console.log(inning());
+console.log(inning());
+console.log(inning());
+console.log(inning());
 
 /* Task 3: finalScore()
 
@@ -76,11 +81,19 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
-
-  /*Code Here*/
-
+function finalScore(cb, num) {
+  let result = {
+    'home': 0,
+    'away': 0
+  }
+  for (let i = 0; i < num; i++) {
+    result.home += cb();
+    result.away += cb();
+  }
+  return result;
 }
+
+console.log(finalScore(inning, 9));
 
 /* Task 4: 
 
