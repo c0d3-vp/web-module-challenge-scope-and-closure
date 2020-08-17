@@ -42,6 +42,7 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+  Closure is when you have access to a higher order function (parent scope).  It allows you to reach into the parent function to assist or add to the current function you are working on and so forth.
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -62,9 +63,9 @@ dansRoll();
 dansRoll();
 ```
 
-a. Where is closure used in this code? How can you tell?
-b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-c. What is the lexical scope of `newRoll`? 
+a. Where is closure used in this code? How can you tell?  Lines 57 & 59.  It's declaring the const as a callback.
+b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change? Assign a more generic and reusable name.
+c. What is the lexical scope of `newRoll`? Only what's found in this function, which in this case is the name parameter;
 
 ### Task 2c - Exit Ticket
 
